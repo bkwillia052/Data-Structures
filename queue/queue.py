@@ -59,21 +59,22 @@ class LinkedList:
                 temp = temp.next_node
             return list_max
 
+
 class Queue:
-  def __init__(self):
-    self.size = 0
-    self.storage = LinkedList()
+    def __init__(self):
+        self.size = 0
+        self.storage = LinkedList()
 
-  def enqueue(self, item):
-    self.size += 1
-    self.storage.add_to_tail(item)
-  
-  def dequeue(self):
-    if self.size > 0:
-      self.size -= 1
-      return self.storage.remove_head()
-    else:
-      return None
+    def enqueue(self, item):
+        self.size += 1
+        self.storage.add_to_tail(item)
 
-  def len(self):
-    return self.size
+    def dequeue(self):
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_head()
+        else:
+            return None
+
+    def len(self):
+        return self.size
