@@ -3,7 +3,7 @@ class Heap:
         self.storage = []
 
     def insert(self, value):
-        print("val", value)
+        
         self.storage.append(value)
         self._bubble_up(self.get_size() - 1)
         print('storage-check', self.storage)
