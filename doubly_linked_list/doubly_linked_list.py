@@ -100,10 +100,21 @@ class DoublyLinkedList:
     def delete(self, node):
         temp = self.head
         while temp:
-            if node.value == temp.value:
+            if node == temp:
                 break
             temp = temp.next
-        temp.delete()
+            print(temp)
+
+        print("Temp", temp.value)
+        if not temp.prev and not temp.next:
+            temp.delete()
+            self.head = None
+            self.tail = None
+        elif not temp.prev:
+            self.head = temp.next
+            temp.delete()
+        else:
+            temp.delete()
 
     def get_max(self):
         current = self.head
